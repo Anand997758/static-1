@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: IngressName
+  namespace: anand
+spec:
+  rules:
+  - host: hanumanthreddy.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ServiceName
+            port:
+              number: 80
